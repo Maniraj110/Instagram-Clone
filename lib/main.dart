@@ -25,7 +25,7 @@ class HomePage extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      backgroundColor: Color.fromARGB(240, 245, 241, 236),
+      backgroundColor: const Color.fromARGB(240, 245, 241, 236),
       body: Column(
         children: [
           SizedBox(height: MediaQuery.of(context).padding.top + height * 0.01),
@@ -87,6 +87,7 @@ class HomePage extends StatelessWidget {
           StoryViewer(),
           SizedBox(height: height * 0.01),
           const Divider(),
+          SizedBox(height: height * 0.01),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -99,7 +100,7 @@ class HomePage extends StatelessWidget {
                   left: width * 0.04,
                   right: width * 0.04,
                 ),
-                height: height * 0.04,
+                height: height * 0.05,
                 width: width * 0.5,
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -118,7 +119,9 @@ class HomePage extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: height * 0.01),
+          SizedBox(
+            height: height * 0.02,
+          ),
           Expanded(
             child: ListView.builder(
               itemCount: body_data.length,
@@ -143,7 +146,7 @@ class HomePage extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
+                          SizedBox(
                             width: width * 0.4,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
