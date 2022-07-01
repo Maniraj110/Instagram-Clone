@@ -6,9 +6,11 @@ class StoryViewer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return SizedBox(
       width: double.infinity,
-      height: MediaQuery.of(context).size.height * 0.15,
+      height: height * 0.15,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: data.length,
@@ -20,10 +22,10 @@ class StoryViewer extends StatelessWidget {
                 children: [
                   Container(
                     margin: EdgeInsets.all(
-                      MediaQuery.of(context).size.width * 0.02,
+                      width * 0.02,
                     ),
-                    width: MediaQuery.of(context).size.width * 0.2,
-                    height: MediaQuery.of(context).size.width * 0.2,
+                    width: width * 0.2,
+                    height: width * 0.2,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(100),
                     ),
@@ -37,12 +39,12 @@ class StoryViewer extends StatelessWidget {
                   ),
                   if (data[i].text == "1")
                     Positioned(
-                      left: MediaQuery.of(context).size.width * 0.1,
-                      top: MediaQuery.of(context).size.width * 0.2,
+                      left: width * 0.1,
+                      top: width * 0.2,
                       child: Stack(children: [
                         Container(
-                          width: MediaQuery.of(context).size.width * 0.05,
-                          height: MediaQuery.of(context).size.width * 0.05,
+                          width: width * 0.05,
+                          height: width * 0.05,
                           decoration: BoxDecoration(
                             color: const Color.fromARGB(255, 214, 6, 214),
                             borderRadius: BorderRadius.circular(100),
@@ -52,7 +54,7 @@ class StoryViewer extends StatelessWidget {
                           alignment: Alignment.center,
                           child: Icon(
                             Icons.add,
-                            size: MediaQuery.of(context).size.width * 0.05,
+                            size: width * 0.05,
                             color: Colors.white,
                           ),
                         )
@@ -63,12 +65,12 @@ class StoryViewer extends StatelessWidget {
               if (data[i].text != "1")
                 Container(
                   margin: EdgeInsets.only(
-                    right: MediaQuery.of(context).size.width * 0.01,
+                    right: width * 0.01,
                   ),
                   child: Text(
                     data[i].text as String,
                     style: TextStyle(
-                      fontSize: MediaQuery.of(context).size.width * 0.03,
+                      fontSize: width * 0.03,
                     ),
                   ),
                 ),
